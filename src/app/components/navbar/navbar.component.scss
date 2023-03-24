@@ -1,0 +1,28 @@
+.navbar {
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  border-bottom: var(--honestly-border);
+  padding: 1rem 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  backdrop-filter: blur(8px);
+  mask: linear-gradient(black, black, transparent);
+}
+
+ul,
+p {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.router-link-active {
+  border-bottom: 2px solid var(--honestly-color-brand);
+}

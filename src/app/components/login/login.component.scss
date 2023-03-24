@@ -1,0 +1,53 @@
+.login-form {
+  width: 400px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 0 auto;
+}
+form {
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0;
+  color: var(--honestly-color-secondary);
+  font-size: 0.8rem;
+}
+
+input {
+  width: 100%;
+  border-radius: var(--honestly-border-radius);
+  border: var(--honestly-border);
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: var(--honestly-bg-color);
+  color: var(--honestly-color);
+  margin-bottom: 1rem;
+}
+
+input[disabled] {
+  color: var(--honestly-color-secondary);
+}
+
+button {
+  color: var(--honestly-color);
+  border: var(--honestly-border);
+  background-color: var(--honestly-bg-color);
+  display: inline-block;
+  text-align: center;
+  border-radius: var(--honestly-border-radius);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-right: 1rem;
+}
+
+button.primary {
+  background-color: var(--honestly-color-brand);
+  border: 1px solid var(--honestly-color-brand);
+  color: white;
+}

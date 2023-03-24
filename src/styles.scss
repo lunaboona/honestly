@@ -1,28 +1,23 @@
-// TODO this is temporary
-
 html,
 body {
-  --custom-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  --honestly-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  --custom-bg-color: #101010;
-  --custom-panel-color: #222;
-  --custom-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8);
-  --custom-color: #fff;
-  --custom-color-brand: #24b47e;
-  --custom-color-secondary: #666;
-  --custom-border: 1px solid #333;
-  --custom-border-radius: 5px;
-  --custom-spacing: 5px;
+  --honestly-bg-color: white;
+  --honestly-color: black;
+  --honestly-color-brand: #24b47e;
+  --honestly-color-secondary: #666;
+  --honestly-border: 1px solid rgb(200, 200, 200);
+  --honestly-border-radius: 0.5rem;
 
   padding: 0;
   margin: 0;
-  font-family: var(--custom-font-family);
-  background-color: var(--custom-bg-color);
+  font-family: var(--honestly-font-family);
+  background-color: var(--honestly-bg-color);
 }
 
 * {
-  color: var(--custom-color);
-  font-family: var(--custom-font-family);
+  color: var(--honestly-color);
+  font-family: var(--honestly-font-family);
   box-sizing: border-box;
 }
 
@@ -31,70 +26,4 @@ body {
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
-}
-
-/* Grid */
-
-.container {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media only screen and (min-width: 33.75em) {
-  /* 540px */
-  .container {
-    width: 80%;
-  }
-}
-
-@media only screen and (min-width: 60em) {
-  /* 960px */
-  .container {
-    width: 75%;
-    max-width: 60rem;
-  }
-}
-
-/* Forms */
-
-label {
-  display: block;
-  margin: 0.5rem 0;
-  color: var(--custom-color-secondary);
-  font-size: 0.8rem;
-}
-
-input {
-  width: 100%;
-  border-radius: var(--custom-border-radius);
-  border: var(--custom-border);
-  padding: 0.5rem;
-  font-size: 1rem;
-  background-color: var(--custom-bg-color);
-  color: var(--custom-color);
-  margin-bottom: 1rem;
-}
-
-input[disabled] {
-  color: var(--custom-color-secondary);
-}
-
-button {
-  color: var(--custom-color);
-  border: var(--custom-border);
-  background-color: var(--custom-bg-color);
-  display: inline-block;
-  text-align: center;
-  border-radius: var(--custom-border-radius);
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  text-align: center;
-  font-size: 0.9rem;
-  margin-right: 1rem;
-}
-
-button.primary {
-  background-color: var(--custom-color-brand);
-  border: 1px solid var(--custom-color-brand);
 }

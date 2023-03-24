@@ -1,22 +1,29 @@
-<h1>log in or sign up to honestly</h1>
-<form [formGroup]="login_form" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="email">email</label>
-    <input id="email" type="email" formControlName="email" />
-  </div>
+<section class="login-form">
+  <h1>log in or sign up to honestly</h1>
+  <p>
+    hi there 👋 honestly is currently only available to logged in users. social
+    login coming soon (tm)
+  </p>
 
-  <div>
-    <label for="password">password</label>
-    <input id="password" type="password" formControlName="password" />
-  </div>
+  <form [formGroup]="login_form" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="email">email</label>
+      <input id="email" type="email" formControlName="email" />
+    </div>
 
-  <div style="color: red" *ngIf="error">{{ error }}</div>
+    <div>
+      <label for="password">password</label>
+      <input id="password" type="password" formControlName="password" />
+    </div>
 
-  <button type="submit" [disabled]="login_form.invalid" class="primary">
-    {{ signUp ? "sign up" : "log in" }}
-  </button>
+    <div style="color: red" *ngIf="error">{{ error }}</div>
 
-  <button (click)="signUp = !signUp">
-    {{ signUp ? "log in" : "sign up" }} instead
-  </button>
-</form>
+    <button type="submit" [disabled]="login_form.invalid" class="primary">
+      {{ signUp ? "sign up" : "log in" }}
+    </button>
+
+    <button (click)="signUp = !signUp">
+      {{ signUp ? "log in" : "sign up" }} instead
+    </button>
+  </form>
+</section>
