@@ -1,18 +1,19 @@
 .navbar {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.5);
   width: 100%;
   border-bottom: var(--honestly-border);
-  padding: 1rem 2rem 4rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   backdrop-filter: blur(8px);
-  mask: linear-gradient(black, black, transparent);
+  border-bottom: 1px solid rgba(200, 200, 200, 0.25);
 }
 
 ul,
 p {
   margin: 0;
+  padding: 0;
 }
 
 li {
