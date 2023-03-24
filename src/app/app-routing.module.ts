@@ -1,39 +1,20 @@
-import { NgModule, inject } from '@angular/core';
-import {
-  ActivatedRouteSnapshot,
-  createUrlTreeFromSnapshot,
-  RouterModule,
-  Routes,
-} from '@angular/router';
-import { SupabaseService } from './services/supabase.service';
-import { map } from 'rxjs/operators';
-
-const authGuard = (next: ActivatedRouteSnapshot) => {
-  return inject(SupabaseService).sessionObservable.pipe(
-    map((session) =>
-      session !== null ? true : createUrlTreeFromSnapshot(next, ['/', 'login'])
-    )
-  );
-};
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { ProfileGuard } from './guards/profile.guard';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
+    loadComponent: () =>
+      import('./components/home/home.component').then((c) => c.HomeComponent),
+    canActivate: [ProfileGuard], // TODO use functional guard
   },
   {
     path: 'login',
     loadComponent: () =>
-      import('./components/auth/auth.component').then((c) => c.AuthComponent),
-  },
-  {
-    path: 'account',
-    loadComponent: () =>
-      import('./components/account/account.component').then(
-        (c) => c.AccountComponent
+      import('./components/login/login.component').then(
+        (c) => c.LoginComponent
       ),
-    canActivate: [authGuard],
   },
 ];
 

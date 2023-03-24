@@ -1,0 +1,22 @@
+<h1>log in or sign up to honestly</h1>
+<form [formGroup]="login_form" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="email">email</label>
+    <input id="email" type="email" formControlName="email" />
+  </div>
+
+  <div>
+    <label for="password">password</label>
+    <input id="password" type="password" formControlName="password" />
+  </div>
+
+  <div style="color: red" *ngIf="error">{{ error }}</div>
+
+  <button type="submit" [disabled]="login_form.invalid" class="primary">
+    {{ signUp ? "sign up" : "log in" }}
+  </button>
+
+  <button (click)="signUp = !signUp">
+    {{ signUp ? "log in" : "sign up" }} instead
+  </button>
+</form>
