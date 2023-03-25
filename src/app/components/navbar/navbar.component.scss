@@ -1,5 +1,5 @@
 .navbar {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(246, 248, 255, 0.5);
   width: 100%;
   border-bottom: var(--honestly-border);
   padding: 1rem 2rem;
@@ -10,8 +10,7 @@
   border-bottom: 1px solid rgba(200, 200, 200, 0.25);
 }
 
-ul,
-p {
+ul {
   margin: 0;
   padding: 0;
 }
@@ -26,4 +25,12 @@ a {
 
 .router-link-active {
   border-bottom: 2px solid var(--honestly-color-brand);
+}
+
+a.logout {
+  text-decoration: underline;
+  cursor: pointer;
+  &:hover {
+    color: var(--honestly-color-error);
+  }
 }

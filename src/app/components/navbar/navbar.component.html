@@ -5,8 +5,8 @@
     </li>
   </ul>
 
-  <p>
-    logged in as {{ profile.id }}.
-    <a (click)="logout()">log out</a>
-  </p>
+  <span>
+    logged in as {{ profile.username }}.
+    <a class="logout" (click)="logout()">log out</a>
+  </span>
 </nav>

@@ -1,22 +1,27 @@
 html,
 body {
-  --honestly-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  --honestly-bg-color: rgb(240, 240, 240);
-  --honestly-color: black;
-  --honestly-color-brand: #24b47e;
-  --honestly-color-secondary: #666;
-  --honestly-border: 1px solid rgb(200, 200, 200);
+  --honestly-font-family: Inter, --apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+
+  --honestly-color-light: #f6f8ff;
+  --honestly-color-dark: #272d2d;
+  --honestly-color-brand: #0fa3b1;
+  --honestly-color-border: #dee2e3;
+  --honestly-color-error: #f07167;
+
+  --honestly-border: 1px solid var(--honestly-color-border);
   --honestly-border-radius: 0.5rem;
 
   padding: 0;
   margin: 0;
+
   font-family: var(--honestly-font-family);
-  background-color: var(--honestly-bg-color);
+  background-color: var(--honestly-color-light);
 }
 
 * {
-  color: var(--honestly-color);
+  color: var(--honestly-color-dark);
   font-family: var(--honestly-font-family);
   box-sizing: border-box;
 }

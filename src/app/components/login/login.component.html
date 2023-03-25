@@ -1,29 +1,74 @@
 <section class="login-form">
-  <h1>log in or sign up to honestly</h1>
-  <p>
-    hi there 👋 honestly is currently only available to logged in users. social
-    login coming soon (tm)
-  </p>
+  <div>
+    <h1>honestly</h1>
+    <p>
+      hi there 👋 honestly is currently only available to logged in users.
+      social login coming soon (tm)
+    </p>
+  </div>
 
-  <form [formGroup]="login_form" (ngSubmit)="onSubmit()">
-    <div>
+  <div class="tabs">
+    <div
+      class="tab"
+      [ngClass]="{ 'tab-selected': currentTab === 'login' }"
+      (click)="currentTab = 'login'"
+    >
+      <span>log in</span>
+    </div>
+
+    <div
+      class="tab"
+      [ngClass]="{ 'tab-selected': currentTab === 'signup' }"
+      (click)="currentTab = 'signup'"
+    >
+      <span>sign up</span>
+    </div>
+  </div>
+
+  <form
+    *ngIf="currentTab === 'login'"
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmitLogin()"
+  >
+    <h-form-field>
       <label for="email">email</label>
       <input id="email" type="email" formControlName="email" />
-    </div>
+    </h-form-field>
 
-    <div>
+    <h-form-field>
       <label for="password">password</label>
       <input id="password" type="password" formControlName="password" />
-    </div>
+    </h-form-field>
 
-    <div style="color: red" *ngIf="error">{{ error }}</div>
+    <button type="submit" [disabled]="loginForm.invalid">log in</button>
 
-    <button type="submit" [disabled]="login_form.invalid" class="primary">
-      {{ signUp ? "sign up" : "log in" }}
+    <div class="error" *ngIf="loginError">error: {{ loginError }}</div>
+  </form>
+
+  <form
+    *ngIf="currentTab === 'signup'"
+    [formGroup]="signupForm"
+    (ngSubmit)="onSubmitSignup()"
+  >
+    <h-form-field>
+      <label for="email">email</label>
+      <input id="email" type="email" formControlName="email" />
+    </h-form-field>
+
+    <h-form-field>
+      <label for="email">username</label>
+      <input id="username" type="text" formControlName="username" />
+    </h-form-field>
+
+    <h-form-field>
+      <label for="password">password</label>
+      <input id="password" type="password" formControlName="password" />
+    </h-form-field>
+
+    <button type="submit" [disabled]="signupForm.invalid">
+      create account
     </button>
 
-    <button (click)="signUp = !signUp">
-      {{ signUp ? "log in" : "sign up" }} instead
-    </button>
+    <div class="error" *ngIf="signupError">error: {{ signupError }}</div>
   </form>
 </section>

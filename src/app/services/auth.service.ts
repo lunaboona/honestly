@@ -110,12 +110,18 @@ export class AuthService {
     });
   }
 
-  signUp(email: string, password: string) {
+  signUp(email: string, password: string, username: string) {
     return new Promise<void>((resolve, reject) => {
       // Set _$profile back to undefined. This will mean that $profile will wait to emit a value
       this._$profile.next(undefined);
       this.supabase.client.auth
-        .signUp({ email, password })
+        .signUp({
+          email,
+          password,
+          options: {
+            data: { username },
+          },
+        })
         .then(({ data, error }) => {
           if (error || !data) reject(error?.message);
 
