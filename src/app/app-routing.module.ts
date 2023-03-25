@@ -16,6 +16,13 @@ const routes: Routes = [
         (c) => c.LoginComponent
       ),
   },
+  {
+    path: 'profile/:username',
+    loadComponent: () =>
+      import('./components/profile/profile.component').then(
+        (c) => c.ProfileComponent
+      ),
+  },
 ];
 
 @NgModule({

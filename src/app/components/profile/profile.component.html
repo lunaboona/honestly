@@ -1,0 +1,14 @@
+<ng-container *ngIf="!error; else errorTemplate">
+  <ng-container *ngIf="!loading; else loadingTemplate">
+    <h1>profile: {{ profile?.username }}</h1>
+  </ng-container>
+</ng-container>
+
+<ng-template #loadingTemplate>
+  <p>loading</p>
+</ng-template>
+
+<ng-template #errorTemplate>
+  <p>something went wrong 😢</p>
+  <p>{{ error }}</p>
+</ng-template>
